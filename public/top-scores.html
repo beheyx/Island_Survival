@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Game - Top Scores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Top Scores</h1>
+    </header>
+    <section>
+        <h2>Top Player:</h2>
+        <p>Username: <span id="topUsername">-</span></p>
+        <p>Time: <span id="topTime">-</span></p>
+
+        <h2>Submit Your Score:</h2>
+        <form id="scoreForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="time">Time:</label>
+            <input type="text" id="time" name="time" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <a href="/">Back to Home</a>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
