@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/web/play-game', (req, res) => {
+    res.sendFile(__dirname + '/public/web/play-game.html');
+});
+
 app.get('/top-scores', (req, res) => {
     res.sendFile(__dirname + '/public/top-scores.html');
 });
