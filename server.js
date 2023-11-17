@@ -37,7 +37,7 @@ app.post('/api/top-player', (req, res) => {
     const gameData = {
         username,
         time,
-    };
+    }; a
 
     // Update topPlayer data
     topPlayer = gameData;
