@@ -491,13 +491,11 @@ sources/12 = SubResource("TileSetAtlasSource_puns4")
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
-rotation = -0.10472
 script = ExtResource("1_107i2")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
-rotation = 0.103785
-scale = Vector2(1.27838, 1.27437)
+rotation = 0.000675701
 tile_set = SubResource("TileSet_7nxyt")
 format = 2
 layer_0/name = "ground"
