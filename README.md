@@ -3,6 +3,8 @@
 Nov 17 updates:
 - added wasd key movement functionality
 - changed hp bar color
+- updated map
+- updated camera boundary
 
 Nov 16 updates:
 - added sprites and enemies
