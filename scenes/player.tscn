@@ -464,7 +464,7 @@ animations = [{
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_srcba"]
-radius = 25.02
+radius = 14.3178
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -506,7 +506,7 @@ wait_time = 2.0
 wait_time = 0.5
 
 [node name="healthbar" type="ProgressBar" parent="."]
-modulate = Color(0.156863, 1, 0, 1)
+modulate = Color(0.917647, 0, 0.235294, 1)
 self_modulate = Color(1, 0.901961, 0.988235, 1)
 offset_left = -5.0
 offset_top = 4.0
@@ -517,7 +517,6 @@ max_value = 200.0
 show_percentage = false
 
 [node name="regen_timer" type="Timer" parent="."]
-wait_time = 5.0
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

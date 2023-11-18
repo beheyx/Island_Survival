@@ -26,22 +26,22 @@ func _physics_process(delta):
 		self.queue_free()
 
 func player_movement(delta):
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("move_right") or Input.is_action_pressed("ui_d"):
 		current_dir = "right"
 		play_anim(1)
 		velocity.x = speed
 		velocity.y = 0
-	elif Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("ui_up") or Input.is_action_pressed("move_up") or Input.is_action_pressed("ui_w"):
 		current_dir = "up"
 		play_anim(1)
 		velocity.x = 0
 		velocity.y = -speed
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("move_down") or Input.is_action_pressed("ui_s"):
 		current_dir = "down"
 		play_anim(1)
 		velocity.x = 0
 		velocity.y = speed
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left") or Input.is_action_pressed("move_left") or Input.is_action_pressed("ui_a"):
 		current_dir = "left"
 		play_anim(1)
 		velocity.x = -speed
@@ -50,6 +50,7 @@ func player_movement(delta):
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
+
 	
 	move_and_slide()
 	
@@ -89,21 +90,35 @@ func play_anim(movement):
 func player():
 	pass
 		
+		
+var body_type;
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
+		body_type = "enemy"
+		enemy_inattack_range = true
+	elif body.has_method("enemy2") :
+		body_type = "enemy2"
 		enemy_inattack_range = true
 
+
 func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy"):
+	if body.has_method("enemy") or body.has_method("enemy2") :
 		enemy_inattack_range = false
 
 		
 func enemy_attack():
-	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health -= 10
-		enemy_attack_cooldown = false
-		$attack_cooldown.start()
-		print("player: " + str(health))
+	if body_type == "enemy":
+		if enemy_inattack_range and enemy_attack_cooldown == true:
+			health -= 10
+			enemy_attack_cooldown = false
+			$attack_cooldown.start()
+			print("player: " + str(health))
+	elif body_type == "enemy2":
+		if enemy_inattack_range and enemy_attack_cooldown == true:
+			health -= 30
+			enemy_attack_cooldown = false
+			$attack_cooldown.start()
+			print("player: " + str(health))
 	pass
 
 
@@ -154,7 +169,7 @@ func update_health():
 
 func _on_regen_timer_timeout():
 	if health < 200:
-		health = health + 5
+		health = health + 10
 		if health > 200:
 			health = 200
 		if health <= 0:

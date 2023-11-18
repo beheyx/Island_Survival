@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var speed = 200
+var speed = 70
 var player_chase = false
 var player = null
-var health = 50
+var health = 100
 var player_inattack_zone = false
 var can_take_damage = true
 
@@ -71,7 +71,7 @@ func update_health():
 	
 	healthbar.value = health
 	
-	if health >= 50:
+	if health >= 100:
 		healthbar.visible = false
 	else:
 		healthbar.visible = true

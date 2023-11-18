@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmvndp8okbfld"]
+[gd_scene load_steps=26 format=3 uid="uid://bmvndp8okbfld"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_107i2"]
 [ext_resource type="Texture2D" uid="uid://c6ng33syew842" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/grass.png" id="1_kmilq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://sljeei3b27us" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/floors/flooring.png" id="9_1koks"]
 [ext_resource type="PackedScene" uid="uid://ddlcdpa7s6p36" path="res://scenes/player.tscn" id="10_h5wby"]
 [ext_resource type="PackedScene" uid="uid://beeldnuknleos" path="res://scenes/enemy.tscn" id="12_tejka"]
+[ext_resource type="PackedScene" uid="uid://cyv8hthch68n3" path="res://scenes/enemy2.tscn" id="14_dhkiq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uv5g"]
 texture = ExtResource("1_kmilq")
@@ -517,4 +518,31 @@ position = Vector2(0, 2)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="enemy" parent="." instance=ExtResource("12_tejka")]
-position = Vector2(164, 198)
+position = Vector2(215, 207)
+
+[node name="enemy2" parent="." instance=ExtResource("12_tejka")]
+position = Vector2(688, 109)
+
+[node name="enemy3" parent="." instance=ExtResource("12_tejka")]
+position = Vector2(565, 264)
+
+[node name="enemy4" parent="." instance=ExtResource("12_tejka")]
+position = Vector2(364, 45)
+
+[node name="enemy5" parent="." instance=ExtResource("12_tejka")]
+position = Vector2(244, 388)
+
+[node name="enemy6" parent="." instance=ExtResource("12_tejka")]
+position = Vector2(-71, 243)
+
+[node name="medEnemy" parent="." instance=ExtResource("14_dhkiq")]
+position = Vector2(48, 411)
+
+[node name="medEnemy2" parent="." instance=ExtResource("14_dhkiq")]
+position = Vector2(220, 59)
+
+[node name="medEnemy3" parent="." instance=ExtResource("14_dhkiq")]
+position = Vector2(554, 403)
+
+[node name="medEnemy4" parent="." instance=ExtResource("14_dhkiq")]
+position = Vector2(427, 163)
