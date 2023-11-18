@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bmvndp8okbfld"]
+[gd_scene load_steps=31 format=3 uid="uid://bmvndp8okbfld"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_107i2"]
 [ext_resource type="Texture2D" uid="uid://c6ng33syew842" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/grass.png" id="1_kmilq"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c5n87xvhs5vl3" path="res://assets/mystic_woods_free_2.1/sprites/objects/objects.png" id="4_plx1f"]
 [ext_resource type="Texture2D" uid="uid://dg6ecvqabctgb" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/water_decorations.png" id="4_ralbo"]
 [ext_resource type="Texture2D" uid="uid://jdxkguui21ug" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/walls/wooden_door.png" id="5_b1wkv"]
-[ext_resource type="Texture2D" uid="uid://cipog01l3dh18" path="res://assets/mystic_woods_free_2.1/TileSet_V1.png" id="6_84i7l"]
 [ext_resource type="Texture2D" uid="uid://bup337f0dafce" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/walls/walls.png" id="6_nuccy"]
 [ext_resource type="Texture2D" uid="uid://rlpcyyh43vp0" path="res://assets/mystic_woods_free_2.1/water.png" id="6_svi6p"]
 [ext_resource type="Texture2D" uid="uid://cmrgmd05mncs7" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/floors/wooden.png" id="8_k7cx1"]
@@ -211,7 +210,6 @@ texture = ExtResource("4_ralbo")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_puns4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_metfx"]
-texture = ExtResource("6_84i7l")
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
