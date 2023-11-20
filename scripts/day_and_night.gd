@@ -4,8 +4,8 @@ var state = "day" #day night
 
 var change_state = false
 
-var length_of_day = 60 #sec
-var length_of_night = 60 #sec
+var length_of_day = 300 #sec
+var length_of_night = 300 #sec
 
 
 func _ready():
