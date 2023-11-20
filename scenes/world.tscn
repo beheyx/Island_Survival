@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bmvndp8okbfld"]
+[gd_scene load_steps=32 format=3 uid="uid://bmvndp8okbfld"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_107i2"]
 [ext_resource type="Texture2D" uid="uid://c6ng33syew842" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/grass.png" id="1_kmilq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://sljeei3b27us" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/floors/flooring.png" id="9_1koks"]
 [ext_resource type="PackedScene" uid="uid://ddlcdpa7s6p36" path="res://scenes/player.tscn" id="10_h5wby"]
 [ext_resource type="PackedScene" uid="uid://beeldnuknleos" path="res://scenes/enemy.tscn" id="12_tejka"]
+[ext_resource type="PackedScene" uid="uid://b8fuw8p1tf088" path="res://scenes/day_and_night.tscn" id="15_qu66u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uv5g"]
 texture = ExtResource("1_kmilq")
@@ -18612,3 +18613,5 @@ rotation_smoothing_enabled = true
 
 [node name="enemy" parent="." instance=ExtResource("12_tejka")]
 position = Vector2(164, 198)
+
+[node name="day_and_night" parent="." instance=ExtResource("15_qu66u")]
