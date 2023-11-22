@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bmvndp8okbfld"]
+[gd_scene load_steps=36 format=3 uid="uid://bmvndp8okbfld"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_bbkab"]
 [ext_resource type="Texture2D" uid="uid://c6ng33syew842" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/grass.png" id="1_kmilq"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ddlcdpa7s6p36" path="res://scenes/player.tscn" id="10_h5wby"]
 [ext_resource type="PackedScene" uid="uid://beeldnuknleos" path="res://scenes/enemy.tscn" id="12_tejka"]
 [ext_resource type="PackedScene" uid="uid://b8fuw8p1tf088" path="res://scenes/day_and_night.tscn" id="15_qu66u"]
+[ext_resource type="PackedScene" uid="uid://cyv8hthch68n3" path="res://scenes/enemy2.tscn" id="17_gu1v6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uv5g"]
 texture = ExtResource("1_kmilq")
@@ -18986,9 +18987,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
-[node name="enemy" parent="." instance=ExtResource("12_tejka")]
-position = Vector2(164, 198)
-
 [node name="day_and_night" parent="." instance=ExtResource("15_qu66u")]
 visible = false
 
@@ -18997,6 +18995,70 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cavedoor"]
 position = Vector2(551, 817)
 shape = SubResource("RectangleShape2D_0ok8p")
+
+[node name="ghostEnemy" type="Node" parent="."]
+
+[node name="enemy" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(527, 348)
+
+[node name="enemy2" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(518, 844)
+
+[node name="enemy3" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(1181, 541)
+
+[node name="enemy4" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(1177, 314)
+
+[node name="enemy5" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(201, 801)
+
+[node name="enemy6" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(761, 804)
+
+[node name="enemy7" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(51, 421)
+
+[node name="enemy8" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(280, 457)
+
+[node name="enemy9" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(-173, 462)
+
+[node name="enemy10" parent="ghostEnemy" instance=ExtResource("12_tejka")]
+position = Vector2(828, 185)
+
+[node name="spritEnemy2" type="Node" parent="."]
+
+[node name="enemy2" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(-128, 723)
+
+[node name="enemy3" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(-71, 304)
+
+[node name="enemy4" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(658, 925)
+
+[node name="enemy5" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(1424, 319)
+
+[node name="enemy6" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(960, 640)
+
+[node name="enemy7" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(105, 601)
+
+[node name="enemy8" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(1007, 177)
+
+[node name="enemy9" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(876, 596)
+
+[node name="enemy10" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(375, 681)
+
+[node name="enemy11" parent="spritEnemy2" instance=ExtResource("17_gu1v6")]
+position = Vector2(1279, 355)
 
 [connection signal="body_entered" from="cavedoor" to="." method="_on_cavedoor_body_entered"]
 [connection signal="body_exited" from="cavedoor" to="." method="_on_cavedoor_body_exited"]

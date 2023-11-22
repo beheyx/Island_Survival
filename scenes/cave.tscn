@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://no84da63rhkn"]
+[gd_scene load_steps=12 format=3 uid="uid://no84da63rhkn"]
 
 [ext_resource type="Script" path="res://scripts/cave.gd" id="1_hpevt"]
 [ext_resource type="Texture2D" uid="uid://dcd3n7ojwct" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/Forest-Tileset.png" id="1_yc071"]
 [ext_resource type="PackedScene" uid="uid://ddlcdpa7s6p36" path="res://scenes/player.tscn" id="2_s8q8s"]
 [ext_resource type="Texture2D" uid="uid://mkr7ju6ffnc5" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/fences.png" id="3_ueklj"]
+[ext_resource type="PackedScene" uid="uid://tcft6k11mgik" path="res://scenes/boss.tscn" id="5_gyl38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uimcn"]
 texture = ExtResource("1_yc071")
@@ -560,6 +561,9 @@ shape = SubResource("RectangleShape2D_v0y5i")
 
 [node name="player" parent="." instance=ExtResource("2_s8q8s")]
 position = Vector2(538, 462)
+
+[node name="boss" parent="." instance=ExtResource("5_gyl38")]
+position = Vector2(418, 253)
 
 [connection signal="body_entered" from="cavedoor" to="." method="_on_cavedoor_body_entered"]
 [connection signal="body_entered" from="cavedoor" to="cavedoor" method="_on_body_entered"]
