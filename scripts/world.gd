@@ -7,10 +7,28 @@ func _ready():
 		$player.position.x = global.player_start_posx
 		$player.position.y = global.player_start_posy
 	else:
-		$player.positiono.x = global.player_exit_posx
-		$player.positiono.y = global.player_exit_posy
+		$player.position.x = global.player_exit_posx
+		$player.position.y = global.player_exit_posy
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	change_scene()
+
+
+func _on_cavedoor_body_entered(body):
+	if body.has_method("player"):
+		global.transition_scene = true
+
+
+func _on_cavedoor_body_exited(body):
+	if body.has_method("player"):
+		global.transition_scene = false
+		
+func change_scene():
+	if global.transition_scene == true:
+		if global.current_scene == "world":
+			if Input.is_action_just_pressed("ui_accept"):
+				get_tree().change_scene_to_file("res://scenes/cave.tscn")
+				global.game_first_loadin = false
+				global.finish_changescenes()

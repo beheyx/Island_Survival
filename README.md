@@ -1,4 +1,8 @@
 ﻿# final-project-wumpus-game-team
+Nov 19 updates:
+- added a cave
+- added scene transition
+- need to work on the part where character exit the cave, he respwan at the starting location
 
 Nov 17 updates:
 - added wasd key movement functionality

@@ -18,6 +18,7 @@ func _physics_process(delta):
 	enemy_attack()
 	attack()
 	update_health()
+
 	#add respawn screen here
 	if health <= 0:
 		player_alive = false  
@@ -131,10 +132,7 @@ func attack():
 			$AnimatedSprite2D.play("back_attack")
 			$deal_attack_timer.start()
 	
-
-		
 	
-
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_current_attack = false
@@ -159,3 +157,5 @@ func _on_regen_timer_timeout():
 			health = 200
 		if health <= 0:
 			health = 0
+
+

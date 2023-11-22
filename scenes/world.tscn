@@ -1,6 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmvndp8okbfld"]
+[gd_scene load_steps=35 format=3 uid="uid://bmvndp8okbfld"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_bbkab"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_bbkab"]
 [ext_resource type="Texture2D" uid="uid://c6ng33syew842" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/grass.png" id="1_kmilq"]
 [ext_resource type="Texture2D" uid="uid://dttvwtps0b34a" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/plains.png" id="2_inehu"]
 [ext_resource type="Texture2D" uid="uid://mkr7ju6ffnc5" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/fences.png" id="3_2x7gr"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://ddlcdpa7s6p36" path="res://scenes/player.tscn" id="10_h5wby"]
 [ext_resource type="PackedScene" uid="uid://beeldnuknleos" path="res://scenes/enemy.tscn" id="12_tejka"]
 [ext_resource type="PackedScene" uid="uid://b8fuw8p1tf088" path="res://scenes/day_and_night.tscn" id="15_qu66u"]
-[ext_resource type="Script" path="res://scripts/enter_cavedoor.gd" id="17_a8ql4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uv5g"]
 texture = ExtResource("1_kmilq")
@@ -18994,11 +18993,10 @@ position = Vector2(164, 198)
 visible = false
 
 [node name="cavedoor" type="Area2D" parent="."]
-script = ExtResource("17_a8ql4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cavedoor"]
 position = Vector2(551, 817)
 shape = SubResource("RectangleShape2D_0ok8p")
 
-[connection signal="body_entered" from="cavedoor" to="cavedoor" method="_on_body_entered"]
-[connection signal="body_exited" from="cavedoor" to="cavedoor" method="_on_body_exited"]
+[connection signal="body_entered" from="cavedoor" to="." method="_on_cavedoor_body_entered"]
+[connection signal="body_exited" from="cavedoor" to="." method="_on_cavedoor_body_exited"]
