@@ -1,4 +1,8 @@
 ﻿# final-project-wumpus-game-team
+
+Nov 22 updates:
+- added prototype boss inside of the cave
+ 
 Nov 19 updates:
 - added a cave
 - added scene transition
