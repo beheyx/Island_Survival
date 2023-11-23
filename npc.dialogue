@@ -1,0 +1,12 @@
+~ npc
+
+if global.given_slimes_item == false
+	Island Man: You've found me! What brings you to this place?
+	- How can I escape this island?
+	ISLAND MAN: Once, I had a telephone to reach the outside world, but a monstrous thief took it from me.
+	ISLAND MAN: You must retrieve it. I'm certain the creature lurks in the depths of the cave.
+	Island Man: Ah, the way out you seek. Deep within that perilous cave lies the TELEPHONE!!!.
+	Island Man: Be caution, for danger hides in the cave.
+	Island Man: I will have to go! Good luck! 
+
+=> END

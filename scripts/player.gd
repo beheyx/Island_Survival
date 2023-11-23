@@ -6,6 +6,7 @@ var health = 200
 var player_alive = true
 
 var attack_ip = false
+var slime_in_range = false
 
 const speed = 100
 var current_dir = "none"
@@ -14,6 +15,10 @@ func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
+	if slime_in_range == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://npc.dialogue"), "npc")
+			return
 	player_movement(delta)
 	enemy_attack()
 	attack()
@@ -26,22 +31,22 @@ func _physics_process(delta):
 		self.queue_free()
 
 func player_movement(delta):
-	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("move_right") or Input.is_action_pressed("ui_d"):
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("move_right"):
 		current_dir = "right"
 		play_anim(1)
 		velocity.x = speed
 		velocity.y = 0
-	elif Input.is_action_pressed("ui_up") or Input.is_action_pressed("move_up") or Input.is_action_pressed("ui_w"):
+	elif Input.is_action_pressed("ui_up") or Input.is_action_pressed("move_up"):
 		current_dir = "up"
 		play_anim(1)
 		velocity.x = 0
 		velocity.y = -speed
-	elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("move_down") or Input.is_action_pressed("ui_s"):
+	elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("move_down"):
 		current_dir = "down"
 		play_anim(1)
 		velocity.x = 0
 		velocity.y = speed
-	elif Input.is_action_pressed("ui_left") or Input.is_action_pressed("move_left") or Input.is_action_pressed("ui_a"):
+	elif Input.is_action_pressed("ui_left") or Input.is_action_pressed("move_left"):
 		current_dir = "left"
 		play_anim(1)
 		velocity.x = -speed
@@ -184,3 +189,13 @@ func _on_regen_timer_timeout():
 		if health <= 0:
 			health = 0
 
+
+
+func _on_detection_area_body_entered(body):
+	if body.has_method("npc"):
+		slime_in_range = true
+
+
+func _on_detection_area_body_exited(body):
+	if body.has_method("npc"):
+		slime_in_range = false

@@ -5,6 +5,9 @@ var player_current_attack = false
 var current_scene = "world"
 var transition_scene = false
 
+var found_slimes_item = false
+var given_slimes_teim = false
+
 
 var game_first_loadin = true
 

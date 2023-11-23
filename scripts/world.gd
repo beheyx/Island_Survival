@@ -6,6 +6,7 @@ func _ready():
 	if global.game_first_loadin == true:
 		$player.position.x = global.player_start_posx
 		$player.position.y = global.player_start_posy
+		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"main")
 	else:
 		$player.position.x = global.player_exit_posx
 		$player.position.y = global.player_exit_posy

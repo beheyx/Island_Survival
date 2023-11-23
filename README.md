@@ -1,8 +1,15 @@
 ﻿# final-project-wumpus-game-team
 
+Nov 23 updates:
+- added music
+- added dialouge
+
 Nov 22 updates:
 - added prototype boss inside of the cave
  
+Nov 21 updates:
+- finished cave and fixed bug with scene transition
+
 Nov 19 updates:
 - added a cave
 - added scene transition

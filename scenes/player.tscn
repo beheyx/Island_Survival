@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://ddlcdpa7s6p36"]
+[gd_scene load_steps=64 format=3 uid="uid://ddlcdpa7s6p36"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_k6im3"]
 [ext_resource type="Texture2D" uid="uid://bkg81mev1padv" path="res://assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_hgqrc"]
@@ -466,6 +466,9 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_srcba"]
 radius = 25.02
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdfp5"]
+radius = 21.0238
+
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 3
@@ -498,7 +501,7 @@ drag_vertical_enabled = true
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
-position = Vector2(0, -10)
+position = Vector2(-1, -10)
 shape = SubResource("CircleShape2D_srcba")
 
 [node name="attack_cooldown" type="Timer" parent="."]
@@ -521,8 +524,16 @@ show_percentage = false
 [node name="regen_timer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="detection area" type="Area2D" parent="."]
+position = Vector2(2, -3)
+
+[node name="detectionshape" type="CollisionShape2D" parent="detection area"]
+shape = SubResource("CircleShape2D_gdfp5")
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
 [connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]
+[connection signal="body_entered" from="detection area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection area" to="." method="_on_detection_area_body_exited"]
