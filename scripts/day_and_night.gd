@@ -4,8 +4,8 @@ var state = "day" #day night
 
 var change_state = false
 
-var length_of_day = 300 #sec
-var length_of_night = 300 #sec
+var length_of_day = 200 #sec
+var length_of_night = 30 #sec
 
 
 func _ready():
@@ -20,7 +20,6 @@ func _on_timer_timeout():
 		state = "night"
 	elif state == "night":
 		state = "day"
-		
 	change_state = true
 	
 func _process(delta):
