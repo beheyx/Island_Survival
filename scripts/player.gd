@@ -28,7 +28,8 @@ func _physics_process(delta):
 		player_alive = false  
 		health = 0
 		$AnimatedSprite2D.play("dead")
-		self.queue_free()
+		#self.queue_free()
+		get_tree().reload_current_scene()
 
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("move_right"):
