@@ -3,6 +3,7 @@
 Nov 27 updates:
 - added player respawn after death
 - fixed attack animations for boss
+- Enabled CORS and SharedArrayBuffer to run Godot game on server
   
 Nov 23 updates:
 - added music
@@ -34,4 +35,3 @@ Nov 12 updates:
 - added the initial map
 - linked character to the map
 - the camera moves as the character moves
-
