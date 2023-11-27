@@ -6,25 +6,41 @@ var player = null
 var health = 300
 var player_inattack_zone = false
 var can_take_damage = true
+var is_dead = false
 
 
 func _physics_process(delta):
 	deal_with_damage()
 	update_health()
-	if player_chase:
-		position += (player.position - position)/speed
-		if health > 200:
-			$AnimatedSprite2D.play("walk1")
-		elif health < 200:
-			$AnimatedSprite2D.play("walk2")
-			
-		if(player.position.x - position.x) < 0:
-			$AnimatedSprite2D.flip_h = true
+	if !is_dead:
+		if player_chase:
+			position += (player.position - position)/speed
+			if !player_inattack_zone:
+				if health > 200:
+					$AnimatedSprite2D.play("walk1")
+				elif health < 200:
+					$AnimatedSprite2D.play("walk2")
+			elif player_inattack_zone:
+				if health > 200:
+					$AnimatedSprite2D.play("attack1")
+				elif health < 200:
+					$AnimatedSprite2D.play("attack2")
+				
+			if(player.position.x - position.x) < 0:
+				$AnimatedSprite2D.flip_h = true
+			else:
+				$AnimatedSprite2D.flip_h = false
+				
 		else:
-			$AnimatedSprite2D.flip_h = false
+			if health >= 200:
+				$AnimatedSprite2D.play("idle")
+			elif health < 200:
+				$AnimatedSprite2D.play("idle2")
+	elif is_dead:
+			$AnimatedSprite2D.play("death")
+			$death_ani.start()
+			self.queue_free()
 			
-	else:
-		$AnimatedSprite2D.play("idle")
 
 func _on_detection_area_body_entered(body):
 	player = body
@@ -37,7 +53,7 @@ func _on_detection_area_body_exited(body):
 	player_chase = false
 
 
-func enemy2():
+func boss():
 	pass
 
 
@@ -53,17 +69,19 @@ func _on_enemy_hitbox_body_exited(body):
 
 
 func deal_with_damage():
-	if player_inattack_zone and global.player_current_attack == true:
+	if is_dead:
+		return
+	elif player_inattack_zone and global.player_current_attack == true:
 		if can_take_damage == true:
-			health -= 10
+			if health > 200:
+				health -= 30
+			elif health < 200:
+				health -= 20
 			print("enemy health: " + str(health))
 			$take_damage_cooldown.start()
 			can_take_damage = false
-			if health <= 0:
-				self.queue_free()
-
-	pass
-
+			if health < 0:
+				is_dead = true
 
 
 func _on_take_damage_cooldown_timeout():
@@ -80,3 +98,9 @@ func update_health():
 	else:
 		healthbar.visible = true
 	
+
+
+
+func _on_death_ani_timeout():
+	print("It has been 7 seconds")
+	self.queue_free() 
