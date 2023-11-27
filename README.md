@@ -1,5 +1,9 @@
 ﻿# final-project-wumpus-game-team
 
+Nov 27 updates:
+- added player respawn after death
+- fixed attack animations for boss
+  
 Nov 23 updates:
 - added music
 - added dialouge
