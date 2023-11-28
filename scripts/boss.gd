@@ -8,6 +8,10 @@ var player_inattack_zone = false
 var can_take_damage = true
 var is_dead = false
 
+func _ready():
+	if global.boss_dead:
+		queue_free()
+	
 
 func _physics_process(delta):
 	deal_with_damage()
@@ -39,7 +43,7 @@ func _physics_process(delta):
 	elif is_dead:
 			$AnimatedSprite2D.play("death")
 			$death_ani.start()
-			self.queue_free()
+			queue_free()
 			
 
 func _on_detection_area_body_entered(body):
@@ -82,6 +86,7 @@ func deal_with_damage():
 			can_take_damage = false
 			if health < 0:
 				is_dead = true
+				global.boss_dead = true
 
 
 func _on_take_damage_cooldown_timeout():
@@ -103,4 +108,4 @@ func update_health():
 
 func _on_death_ani_timeout():
 	print("It has been 7 seconds")
-	self.queue_free() 
+	queue_free() 

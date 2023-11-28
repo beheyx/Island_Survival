@@ -8,6 +8,7 @@ var transition_scene = false
 var found_slimes_item = false
 var given_slimes_teim = false
 
+var boss_dead = false
 
 var game_first_loadin = true
 
