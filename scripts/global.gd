@@ -15,8 +15,8 @@ var game_first_loadin = true
 var player_start_posx = 41
 var player_start_posy = 85
 
-var player_exit_posx = 551
-var player_exit_posy = 819
+var player_exit_posx = 524
+var player_exit_posy = 831
 
 func finish_changescenes():
 	if transition_scene == true:
