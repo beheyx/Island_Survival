@@ -1,4 +1,7 @@
 ﻿# final-project-wumpus-game-team
+Nov 30 updates:
+- pushed the new map with new assets
+- fixed bug when coming out of the cave
 
 Nov 27 updates:
 - added player respawn after death
