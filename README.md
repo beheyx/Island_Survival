@@ -1,4 +1,9 @@
 ﻿# final-project-wumpus-game-team
+
+Dec 1 updates:
+- added end game
+- helicopter escape
+  
 Nov 30 updates:
 - pushed the new map with new assets
 - fixed bug when coming out of the cave
