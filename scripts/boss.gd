@@ -78,9 +78,9 @@ func deal_with_damage():
 	elif player_inattack_zone and global.player_current_attack == true:
 		if can_take_damage == true:
 			if health > 200:
-				health -= 30
+				health -= 40
 			elif health < 200:
-				health -= 20
+				health -= 30
 			print("enemy health: " + str(health))
 			$take_damage_cooldown.start()
 			can_take_damage = false
