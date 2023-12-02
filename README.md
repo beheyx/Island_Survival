@@ -3,6 +3,7 @@
 Dec 1 updates:
 - added end game
 - helicopter escape
+- added interaction with helicopter + start/end timer
   
 Nov 30 updates:
 - pushed the new map with new assets

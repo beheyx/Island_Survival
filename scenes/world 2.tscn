@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bmvndp8okbfld"]
+[gd_scene load_steps=65 format=3 uid="uid://cle8k7v4h2j5b"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_bbkab"]
 [ext_resource type="Texture2D" uid="uid://c6ng33syew842" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/grass.png" id="1_kmilq"]
