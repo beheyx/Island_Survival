@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhck76c4h1r77"]
+[gd_scene load_steps=10 format=3 uid="uid://bhck76c4h1r77"]
 
 [ext_resource type="Texture2D" uid="uid://dcd3n7ojwct" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/Forest-Tileset.png" id="1_p1gl0"]
 [ext_resource type="Texture2D" uid="uid://mkr7ju6ffnc5" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/fences.png" id="2_fsvws"]
@@ -16,7 +16,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		global.update_finish_time()
+		DialogueManager.show_example_dialogue_balloon(load(\"res://main.dialogue\"),\"main\")
+
+
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uimcn"]
@@ -423,6 +427,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uimcn")
 sources/1 = SubResource("TileSetAtlasSource_usd3n")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwtrf"]
+size = Vector2(68, 29)
+
 [node name="endgame" type="Node2D"]
 script = SubResource("GDScript_wp548")
 
@@ -445,3 +452,7 @@ position = Vector2(407, 705)
 
 [node name="helicopter" parent="." instance=ExtResource("4_7jolg")]
 position = Vector2(401, 509)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="helicopter"]
+position = Vector2(5, 28.5)
+shape = SubResource("RectangleShape2D_jwtrf")
