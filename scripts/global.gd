@@ -12,11 +12,11 @@ var boss_dead = false
 
 var game_first_loadin = true
 
-var player_start_posx = 41
-var player_start_posy = 85
+var player_start_posx = -407
+var player_start_posy = 581
 
-var player_exit_posx = 524
-var player_exit_posy = 831
+var player_exit_posx = 1291
+var player_exit_posy = 257
 
 var time = 0
 var finish_time = 0
