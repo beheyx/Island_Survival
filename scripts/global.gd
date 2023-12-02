@@ -18,6 +18,15 @@ var player_start_posy = 85
 var player_exit_posx = 524
 var player_exit_posy = 831
 
+var time = 0
+var finish_time = 0
+
+func update_finish_time():
+	finish_time = time
+
+func return_finish_time():
+	return finish_time
+
 func finish_changescenes():
 	if transition_scene == true:
 		transition_scene = false
