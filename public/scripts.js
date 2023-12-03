@@ -1,31 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fetch and display top player data on page load
-    fetch('/api/top-player')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('topUsername').textContent = data.username;
-            document.getElementById('topTime').textContent = data.time;
-        });
+    const scoreForm = document.getElementById('scoreForm');
+    const topUsernameElement = document.getElementById('topUsername');
+    const topTimeElement = document.getElementById('topTime');
 
-    // Handle form submission
-    document.getElementById('scoreForm').addEventListener('submit', (event) => {
+    // Function to fetch and update the top player data
+    async function updateTopPlayerData() {
+        try {
+            const response = await fetch('http://localhost:3000/api/top-player');
+            const topPlayerData = await response.json();
+
+            // Update the UI with the fetched data
+            topUsernameElement.textContent = topPlayerData.username;
+            topTimeElement.textContent = topPlayerData.time;
+        } catch (error) {
+            console.error('Error fetching top player data:', error);
+        }
+    }
+
+    // Initial update of top player data when the page loads
+    updateTopPlayerData();
+
+    // Event listener for form submission
+    scoreForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const formData = new FormData(event.target);
-        const username = formData.get('username');
-        const time = formData.get('time');
+        const username = document.getElementById('username').value;
+        const time = document.getElementById('time').value;
 
-        // Send data to server
-        fetch('/api/top-player', {
+        // Submit the form data to the server
+        const response = await fetch('http://localhost:3000/api/submit-score', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ username, time }),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data.message);
-            });
+        });
+
+        const result = await response.json();
+        console.log(result);
+
+        // Update the UI with the latest top player data after submission
+        updateTopPlayerData();
     });
 });
