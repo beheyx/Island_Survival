@@ -68,10 +68,11 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="day_and_night"]
-offset_left = -1325.0
-offset_top = -976.0
-offset_right = 2781.0
-offset_bottom = 2146.0
+offset_left = -2859.0
+offset_top = -1466.0
+offset_right = 1247.0
+offset_bottom = 1656.0
+scale = Vector2(1.97777, 1.64011)
 color = Color(0, 0, 0, 0.588235)
 metadata/_edit_use_anchors_ = true
 
