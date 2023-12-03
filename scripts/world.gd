@@ -3,7 +3,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.game_first_loadin == true:
-		global.setTimeVars()
 		$player.position.x = global.player_start_posx
 		$player.position.y = global.player_start_posy
 		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"main")
@@ -14,6 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	global.time += delta
 	change_scene()
 
 func _on_cavedoor_body_entered(body):

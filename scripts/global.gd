@@ -18,21 +18,14 @@ var player_start_posy = 580
 var player_exit_posx = 1291
 var player_exit_posy = 256
 
-var secTimeIncrement = 0
-
-func setTimeVars():
-	JavaScriptBridge.eval("var time = 0;", true)
-	JavaScriptBridge.eval("var finish_time = 0;", true)
-	secTimeIncrement = 0
-
-func _process(delta):
-	secTimeIncrement += delta
-	while secTimeIncrement >= 1:
-		JavaScriptBridge.eval("time += 1;", true)
-		secTimeIncrement -= 1
+var time = 0
+var finish_time = 0
 
 func update_finish_time():
-	JavaScriptBridge.eval("finish_time = time;", true)
+	finish_time = time
+
+func return_finish_time():
+	return finish_time
 
 func finish_changescenes():
 	if transition_scene == true:

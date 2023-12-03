@@ -1,5 +1,8 @@
 ﻿# final-project-wumpus-game-team
 
+Dec 2 updates:
+- finished cave
+- need to fix the cave's ysort bug
 Dec 1 updates:
 - added end game
 - helicopter escape
