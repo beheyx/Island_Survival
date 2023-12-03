@@ -21,6 +21,10 @@ global="*res://scripts/global.gd"
 GobalForPlayer="*res://scripts/gobal_for_player.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[dialogue_manager]
+
+general/states=["global"]
+
 [display]
 
 window/stretch/scale=4.0

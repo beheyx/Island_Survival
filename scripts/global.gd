@@ -1,5 +1,7 @@
 extends Node
 
+const SAVE_JSON := "user://save.json"
+
 var player_current_attack = false
 
 var current_scene = "world"
@@ -18,21 +20,22 @@ var player_start_posy = 580
 var player_exit_posx = 1291
 var player_exit_posy = 256
 
-var secTimeIncrement = 0
+var time = 0
+var finish_time = INF
 
-func setTimeVars():
-	JavaScriptBridge.eval("var time = 0;", true)
-	JavaScriptBridge.eval("var finish_time = 0;", true)
-	secTimeIncrement = 0
+var saved_finish_time = false
 
 func _process(delta):
-	secTimeIncrement += delta
-	while secTimeIncrement >= 1:
-		JavaScriptBridge.eval("time += 1;", true)
-		secTimeIncrement -= 1
+	time += delta
 
 func update_finish_time():
-	JavaScriptBridge.eval("finish_time = time;", true)
+	if saved_finish_time == false:
+		finish_time = time
+		# Some method of displaying time to player, saving to file, or sending signal to server
+		
+		OS.alert(finish_time, 'Finish Time')
+		#save_json()
+		saved_finish_time = true
 
 func finish_changescenes():
 	if transition_scene == true:
@@ -41,3 +44,18 @@ func finish_changescenes():
 			current_scene = "cave"
 		else:
 			current_scene = "world"
+
+func save_json() -> void:
+	# Create a dictionary to hold the finish_time data
+	var output := {
+		"finish_time": finish_time
+	}
+	# Convert the dictionary to a JSON string
+	var json := JSON.stringify(output)
+	# Save the resulting JSON to a file using the `File` class in write mode
+	var file := JSON.new()
+	file.open(SAVE_JSON, JSON)
+	# Store the JSON string in the file
+	file.store_string(json)
+	# Clean up
+	file.close()

@@ -3,14 +3,13 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if global.game_first_loadin == true:
-		global.setTimeVars()
+		global.time = 0
 		$player.position.x = global.player_start_posx
 		$player.position.y = global.player_start_posy
 		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"main")
 	else:
 		$player.position.x = global.player_exit_posx
 		$player.position.y = global.player_exit_posy
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,7 +18,6 @@ func _process(delta):
 func _on_cavedoor_body_entered(body):
 	if body.has_method("player"):
 		global.transition_scene = true
-
 
 func _on_cavedoor_body_exited(body):
 	if body.has_method("player"):
