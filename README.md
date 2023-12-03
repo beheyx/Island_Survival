@@ -3,6 +3,10 @@
 Dec 2 updates:
 - finished cave
 - need to fix the cave's ysort bug
+- Implemented scores database
+- Implemented finish time displayed to user in game
+- Implemented server-client logic to update fastest time based on user input
+
 Dec 1 updates:
 - added end game
 - helicopter escape
