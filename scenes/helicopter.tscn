@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dfcdhdoyovljh"]
 
-[ext_resource type="Script" path="res://helicopter.gd" id="1_vwlco"]
+[ext_resource type="Script" path="res://scripts/helicopter.gd" id="1_vwlco"]
 [ext_resource type="Texture2D" uid="uid://4mjei72ugcux" path="res://assets/mystic_woods_free_2.1/sprites/characters/green-heli.png" id="2_tqlkx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxc6d"]
