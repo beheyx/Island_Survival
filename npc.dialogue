@@ -3,9 +3,11 @@
 if global.given_slimes_item == false
 	Island Man: You've found me! What brings you here?
 	- How can I escape this island?
-	ISLAND MAN: The only way to get out of here is that you have to get the key from the monster inside the cave.
+	Island Man: There is a secret exit somewhere on the SOUTH side of this island. However, the exit is locked unless you have the key.
+	- Where can I find the key?
+	Island Man: The key is guarded by the monster in the cave. You would have to kill him to obtain the key.
 	- Where is the cave?
-	ISLAND MAN: The cave is near the ancient stone you can find it on the EAST side of this island.
+	Island Man: The cave is near the ancient stone you can find it on the EAST side of this island.
 	Island Man: Be caution, for danger hides in the cave.
 	Island Man: Good luck!
 

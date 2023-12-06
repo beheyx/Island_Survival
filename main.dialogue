@@ -1,9 +1,10 @@
 ~ main
 
-TUTORIAL: Greetings!, and welcome to Lost Island!
+TUTORIAL: Greetings! Welcome to Lost Island!
 TUTORIAL: Allow me to guide you through the basics of this game.
 TUTORIAL: Move your character using [W, S, A, D].
 TUTORIAL: Use [SPACE] for actions like attacking, interacting, and entering caves.
+TUTORIAL: If you find yourself low on health, out-of-combat will slowly regen your health.
 TUTORIAL: Find the lonely man in the village, he will lead you get out of this island!
 
 => END
