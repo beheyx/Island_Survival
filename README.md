@@ -1,5 +1,9 @@
 ﻿# final-project-wumpus-game-team
 
+Dec 6 updates:
+- fixed health regen
+- buffed boss
+
 Dec 2 updates:
 - finished cave
 - need to fix the cave's ysort bug

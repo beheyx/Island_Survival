@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 70
+var speed = 80
 var player_chase = false
 var player = null
 var health = 300
@@ -80,7 +80,7 @@ func deal_with_damage():
 			if health > 200:
 				health -= 40
 			elif health < 200:
-				health -= 30
+				health -= 20
 			print("enemy health: " + str(health))
 			$take_damage_cooldown.start()
 			can_take_damage = false
