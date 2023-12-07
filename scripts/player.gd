@@ -200,3 +200,4 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if body.has_method("npc"):
 		slime_in_range = false
+
