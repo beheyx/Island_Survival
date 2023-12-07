@@ -3,6 +3,8 @@
 Dec 6 updates:
 - fixed health regen
 - buffed boss
+- add new dialogue
+- add new sprite for npc
 
 Dec 2 updates:
 - finished cave
