@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bstp"]
-size = Vector2(92, 69)
+size = Vector2(164.313, 91.375)
 
 [node name="helicopter" type="CharacterBody2D"]
 script = ExtResource("1_vwlco")
@@ -41,12 +41,12 @@ script = ExtResource("1_vwlco")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(5, -5)
-scale = Vector2(0.860677, 0.882247)
+position = Vector2(49.8438, 15.8261)
+scale = Vector2(1.79492, 1.31612)
 sprite_frames = SubResource("SpriteFrames_301mp")
 animation = &"idle"
 frame_progress = 0.582827
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -7.5)
+position = Vector2(35.8438, 14.3125)
 shape = SubResource("RectangleShape2D_8bstp")
