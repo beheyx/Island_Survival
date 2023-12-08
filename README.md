@@ -1,5 +1,5 @@
 ﻿# final-project-wumpus-game-team
-Dec 9 updates:
+Dec 8 updates:
 - add 2nd npc in world
  
 Dec 7 updates:
