@@ -1,5 +1,6 @@
 ﻿# final-project-wumpus-game-team
 Dec 7 updates:
+- change end game map 
 - add new NPC and dialogue inside the cave
 
 Dec 6 updates:
