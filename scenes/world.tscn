@@ -30313,7 +30313,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ulkth"]
-radius = 17.1172
+radius = 25.0
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -30472,8 +30472,8 @@ shape = SubResource("RectangleShape2D_pnrl6")
 script = ExtResource("39_rpbpu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc2"]
-position = Vector2(-247, 575.5)
-scale = Vector2(1.625, 1.8125)
+position = Vector2(1335, 292)
+scale = Vector2(2.0625, 2.1875)
 sprite_frames = SubResource("SpriteFrames_ggrb3")
 animation = &"idle"
 frame = 4
@@ -30481,7 +30481,7 @@ frame = 4
 [node name="Timer" type="Timer" parent="npc2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc2"]
-position = Vector2(-247, 579)
+position = Vector2(1334, 297)
 shape = SubResource("CircleShape2D_ulkth")
 
 [connection signal="body_entered" from="cavedoor" to="." method="_on_cavedoor_body_entered"]

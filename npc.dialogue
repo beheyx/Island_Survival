@@ -1,14 +1,14 @@
 ~ npc
 
 if global.given_slimes_item == false
-	Island Man: You've found me! What brings you here?
+	Lonely Man: You've found me! What brings you here?
 	- How can I escape this island?
-	Island Man: There is a secret exit somewhere on the SOUTH side of this island. However, the exit is locked unless you have the key.
+	Lonely Man: There is a secret exit somewhere on the SOUTH side of this island. However, the exit is locked unless you have the key.
 	- Where can I find the key?
-	Island Man: The key is guarded by the monster in the cave. You would have to kill him to obtain the key.
-	- Where is the cave?
-	Island Man: The cave is near the ancient stone you can find it on the EAST side of this island.
-	Island Man: Be caution, for danger hides in the cave.
-	Island Man: Good luck!
+	Lonely Man: I cannot asnwer that question. You have to go talk to the Noob-Boy!
+	- Where is the Noob-Boy?
+	Lonely Man: The Noob-Boy is at the West side of this Island, keep walking and talk to him.
+	Lonely Man: Be caution, there's monsters around here!
+	Lonely Man: Good luck!
 
 => END
