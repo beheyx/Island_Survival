@@ -4,8 +4,6 @@ func _process(delta):
 	change_scenes()
 
 
-func _ready():
-	DialogueManager.show_example_dialogue_balloon(load("res://npcCave.dialogue"), "npcCave")
 func _on_cavedoor_body_entered(body):
 	if body.has_method("player"):
 		global.transition_scene = true

@@ -10,7 +10,7 @@ var slime_in_range = false
 var npcCave_in_range = false
 const speed = 100
 var current_dir = "none"
-
+var snakk = false
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
