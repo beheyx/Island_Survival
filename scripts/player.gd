@@ -7,7 +7,7 @@ var player_alive = true
 
 var attack_ip = false
 var slime_in_range = false
-
+var npcCave_in_range = false
 const speed = 100
 var current_dir = "none"
 
@@ -18,7 +18,9 @@ func _physics_process(delta):
 	if slime_in_range == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://npc.dialogue"), "npc")
-			return
+	if npcCave_in_range == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://npcCave.dialogue"), "npcCave")
 	player_movement(delta)
 	enemy_attack()
 	attack()
@@ -195,9 +197,12 @@ func _on_regen_timer_timeout():
 func _on_detection_area_body_entered(body):
 	if body.has_method("npc"):
 		slime_in_range = true
-
+	if body.has_method("npcCave"):
+		npcCave_in_range = true
 
 func _on_detection_area_body_exited(body):
 	if body.has_method("npc"):
 		slime_in_range = false
+	if body.has_method("npcCave"):
+		npcCave_in_range = false
 

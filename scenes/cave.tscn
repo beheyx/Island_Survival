@@ -5957,7 +5957,7 @@ sources/1 = SubResource("TileSetAtlasSource_cru02")
 size = Vector2(43.5, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hi2cn"]
-radius = 26.0768
+radius = 21.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftj54"]
 atlas = ExtResource("18_ccel3")

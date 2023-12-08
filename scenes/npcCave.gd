@@ -5,7 +5,7 @@ extends CharacterBody2D
 const SPEED = 30
 var current_state = IDLE
 var dir = Vector2.RIGHT
-
+var npcCave_in_range = true
 var start_pos
 
 enum {
@@ -24,10 +24,8 @@ func _ready():
 	$Timer.wait_time = choose([0.5, 1, 1.5])
 	$Timer.start()
 
-
+	
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		DialogueManager.show_example_dialogue_balloon(load("res://npcCave.dialogue"),"npcCave")
 	match current_state:
 		IDLE:
 			$AnimatedSprite2D.play("idle")
@@ -35,7 +33,6 @@ func _process(delta):
 			$AnimatedSprite2D.play("idle")
 		MOVE:
 			$AnimatedSprite2D.play("walk")
-
 
 func move(delta):
 	print("Move function called")
@@ -55,3 +52,11 @@ func _on_timer_timeout():
 	$Timer.wait_time = choose([0.5, 1, 1.5])
 	current_state = choose([IDLE, NEW_DIR, MOVE])
 	
+func _on_detection_area_body_entered(body):
+	if body.has_method("npcCave"):
+		npcCave_in_range = false
+
+
+func _on_detection_area_body_exited(body):
+	if body.has_method("npcCave"):
+		npcCave_in_range = false

@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 
-
 const SPEED = 30
 var current_state = IDLE
 var dir = Vector2.RIGHT
@@ -24,6 +23,7 @@ func _ready():
 	$Timer.start()
 
 	
+			
 func _process(delta):
 	match current_state:
 		IDLE:
