@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://no84da63rhkn"]
+[gd_scene load_steps=43 format=3 uid="uid://no84da63rhkn"]
 
 [ext_resource type="Script" path="res://scripts/cave.gd" id="1_hpevt"]
 [ext_resource type="Texture2D" uid="uid://dcd3n7ojwct" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/Forest-Tileset.png" id="1_yc071"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://dg53nn4s0y8nn" path="res://assets/dragon-ancient/PNG/Objects_separately/Cave_entrance2_ground_shadow.png" id="10_0t1gj"]
 [ext_resource type="Texture2D" uid="uid://cxpf6n603dwgt" path="res://assets/dragon-ancient/PNG/Objects_separately/Dragon_bones_wing2_ground_shadow.png" id="10_bbpxu"]
 [ext_resource type="Texture2D" uid="uid://dw4x1wyht6slg" path="res://assets/dragon-ancient/PNG/Objects_separately/Caury_white2_ground_shadow.png" id="11_m8ddh"]
+[ext_resource type="Script" path="res://scenes/npcCave.gd" id="17_eysqi"]
+[ext_resource type="Texture2D" uid="uid://b4q76pt28f1ae" path="res://assets/characters/playersSkins16.png" id="18_ccel3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uimcn"]
 texture = ExtResource("1_yc071")
@@ -5954,6 +5956,52 @@ sources/1 = SubResource("TileSetAtlasSource_cru02")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0y5i"]
 size = Vector2(43.5, 30)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hi2cn"]
+radius = 26.0768
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftj54"]
+atlas = ExtResource("18_ccel3")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsdag"]
+atlas = ExtResource("18_ccel3")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pggj5"]
+atlas = ExtResource("18_ccel3")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onw5a"]
+atlas = ExtResource("18_ccel3")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2n1q"]
+atlas = ExtResource("18_ccel3")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c62dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftj54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsdag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pggj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onw5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2n1q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="cave" type="Node2D"]
 position = Vector2(-40, -64)
 script = ExtResource("1_hpevt")
@@ -6002,6 +6050,22 @@ position = Vector2(497, 324)
 stream = ExtResource("6_qbrfr")
 volume_db = -5.622
 autoplay = true
+
+[node name="npcCave" type="CharacterBody2D" parent="."]
+script = ExtResource("17_eysqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npcCave"]
+position = Vector2(669, 1334)
+shape = SubResource("CircleShape2D_hi2cn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npcCave"]
+position = Vector2(670, 1331)
+scale = Vector2(1.5, 1.875)
+sprite_frames = SubResource("SpriteFrames_c62dd")
+animation = &"idle"
+frame_progress = 0.611407
+
+[node name="Timer" type="Timer" parent="npcCave"]
 
 [connection signal="body_entered" from="cavedoor" to="." method="_on_cavedoor_body_entered"]
 [connection signal="body_entered" from="cavedoor" to="cavedoor" method="_on_body_entered"]

@@ -16,7 +16,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed(\"ui_accept\"):
 		global.update_finish_time()
-		DialogueManager.show_example_dialogue_balloon(load(\"res://endgame.dialogue\"),\"endgame\")
+		DialogueManager.show_example_dialogue_balloon(load(\"res://ENDGAME.dialogue\"),\"ENDGAME\")
+		
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uimcn"]
