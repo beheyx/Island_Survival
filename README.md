@@ -1,10 +1,12 @@
 ﻿# final-project-wumpus-game-team
+Dec 7 updates:
+- add new NPC and dialogue inside the cave
 
 Dec 6 updates:
 - fixed health regen
 - buffed boss
 - add new dialogue
-- add new sprite for npc
+- add new sprite for NPC
 
 Dec 2 updates:
 - finished cave
