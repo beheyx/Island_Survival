@@ -9,7 +9,7 @@ var attack_ip = false
 var slime_in_range = false
 var npcCave_in_range = false
 var npc2_in_range = false
-var goatman_in_range = false
+var goatMan_in_range = false
 const speed = 100
 var current_dir = "none"
 var snakk = false
@@ -26,9 +26,9 @@ func _physics_process(delta):
 	if npc2_in_range == true:
 		if Input.is_action_just_pressed("interaction"):
 			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/npc2.dialogue"), "npc2")
-	if goatman_in_range == true:
+	if goatMan_in_range == true:
 		if Input.is_action_just_pressed("interaction"):
-			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/goatMan.dialogue"), "goatman")		
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/goatMan.dialogue"), "goatMan")		
 	player_movement(delta)
 	enemy_attack()
 	attack()
@@ -209,8 +209,8 @@ func _on_detection_area_body_entered(body):
 		npcCave_in_range = true
 	if body.has_method("npc2"):
 		npc2_in_range = true
-	if body.has_method("goatman"):
-		goatman_in_range = true
+	if body.has_method("goatMan"):
+		goatMan_in_range = true
 
 func _on_detection_area_body_exited(body):
 	if body.has_method("npc"):
@@ -219,8 +219,8 @@ func _on_detection_area_body_exited(body):
 		npcCave_in_range = false
 	if body.has_method("npc2"):
 		npc2_in_range = false
-	if body.has_method("goatman"):
-		goatman_in_range = false
+	if body.has_method("goatMan"):
+		goatMan_in_range = false
 
 
 func _on_end_game_body_entered(body):

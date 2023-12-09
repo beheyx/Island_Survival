@@ -14,8 +14,9 @@ enum {
 	MOVE
 }
 
-func npcCave():
+func goatMan():
 	pass
+	
 
 
 func _ready():
