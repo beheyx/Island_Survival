@@ -4,22 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://mkr7ju6ffnc5" path="res://assets/mystic_woods_free_2.1/sprites/tilesets/fences.png" id="2_fsvws"]
 [ext_resource type="PackedScene" uid="uid://ddlcdpa7s6p36" path="res://scenes/player.tscn" id="2_krrpl"]
 [ext_resource type="PackedScene" uid="uid://dfcdhdoyovljh" path="res://scenes/helicopter.tscn" id="4_7jolg"]
-[ext_resource type="Script" path="res://scenes/goatman.gd" id="5_4f43s"]
+[ext_resource type="Script" path="res://scripts/goatman.gd" id="5_4f43s"]
 [ext_resource type="Texture2D" uid="uid://b4q76pt28f1ae" path="res://assets/characters/playersSkins16.png" id="6_os86r"]
 
 [sub_resource type="GDScript" id="GDScript_wp548"]
 script/source = "extends Node2D
 
+var end_game = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed(\"ui_accept\"):
-		global.update_finish_time()
-		DialogueManager.show_example_dialogue_balloon(load(\"res://ENDGAME.dialogue\"),\"ENDGAME\")
-		
+	if end_game == true:
+		if Input.is_action_just_pressed(\"interaction\"):
+			DialogueManager.show_example_dialogue_balloon(load(\"res://dialogue/endgame.dialogue\"),\"ENDGAME\")
+			global.update_finish_time()
+	
+
+func _on_end_game_body_entered(body):
+	if body.has_method(\"player\"):
+		end_game = true
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uimcn"]
@@ -195,12 +201,6 @@ texture = ExtResource("1_p1gl0")
 6:5/0 = 0
 6:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:5/0/physics_layer_0/angular_velocity = 0.0
-0:6/0 = 0
-0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:6/0/physics_layer_0/angular_velocity = 0.0
-1:6/0 = 0
-1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:6/0/physics_layer_0/angular_velocity = 0.0
 2:6/0 = 0
 2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:6/0/physics_layer_0/angular_velocity = 0.0
@@ -217,12 +217,6 @@ texture = ExtResource("1_p1gl0")
 6:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:6/0/physics_layer_0/angular_velocity = 0.0
 6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:7/0 = 0
-0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:7/0/physics_layer_0/angular_velocity = 0.0
-1:7/0 = 0
-1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:7/0/physics_layer_0/angular_velocity = 0.0
 2:7/0 = 0
 2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:7/0/physics_layer_0/angular_velocity = 0.0
@@ -359,6 +353,12 @@ texture = ExtResource("1_p1gl0")
 9:11/0 = 0
 9:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:11/0/physics_layer_0/angular_velocity = 0.0
+0:6/size_in_atlas = Vector2i(2, 2)
+0:6/0 = 0
+0:6/0/y_sort_origin = 10
+0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:6/0/physics_layer_0/angular_velocity = 0.0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.0625, 8, 3.9375, 8, 6.8125, 14, -6.3125, 12.75)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usd3n"]
 texture = ExtResource("2_fsvws")
@@ -425,9 +425,6 @@ texture = ExtResource("2_fsvws")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uimcn")
 sources/1 = SubResource("TileSetAtlasSource_usd3n")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwtrf"]
-size = Vector2(68, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3fx5"]
 atlas = ExtResource("6_os86r")
@@ -496,10 +493,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_irvj7"]
 radius = 16.0312
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwtrf"]
+size = Vector2(206, 78)
+
 [node name="endgame" type="Node2D"]
 script = SubResource("GDScript_wp548")
 
 [node name="background" type="TileMap" parent="."]
+y_sort_enabled = true
 position = Vector2(64, 124)
 tile_set = SubResource("TileSet_1i8bu")
 format = 2
@@ -512,16 +513,19 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
+layer_2/name = "ysort"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = true
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
 
 [node name="player" parent="." instance=ExtResource("2_krrpl")]
 position = Vector2(407, 705)
 
 [node name="helicopter" parent="." instance=ExtResource("4_7jolg")]
-position = Vector2(407, 499)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="helicopter"]
-position = Vector2(5, 28.5)
-shape = SubResource("RectangleShape2D_jwtrf")
+position = Vector2(366, 496)
 
 [node name="goatman" type="CharacterBody2D" parent="."]
 script = ExtResource("5_4f43s")
@@ -538,3 +542,11 @@ frame = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goatman"]
 position = Vector2(454, 658)
 shape = SubResource("CircleShape2D_irvj7")
+
+[node name="end_game" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="end_game"]
+position = Vector2(409, 553)
+shape = SubResource("RectangleShape2D_jwtrf")
+
+[connection signal="body_entered" from="end_game" to="." method="_on_end_game_body_entered"]

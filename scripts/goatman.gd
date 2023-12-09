@@ -26,8 +26,6 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		DialogueManager.show_example_dialogue_balloon(load("res://goatMan.dialogue"),"goatMan")
 	match current_state:
 		IDLE:
 			$AnimatedSprite2D.play("idle")

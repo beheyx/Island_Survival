@@ -1,6 +1,8 @@
 ﻿# final-project-wumpus-game-team
 Dec 8 updates:
 - add 2nd npc in world
+- fixed endgame bug
+- game almost finished
  
 Dec 7 updates:
 - change end game map 

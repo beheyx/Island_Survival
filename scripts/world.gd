@@ -6,7 +6,7 @@ func _ready():
 		global.time = 0
 		$player.position.x = global.player_start_posx
 		$player.position.y = global.player_start_posy
-		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"main")
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"),"main")
 	else:
 		$player.position.x = global.player_exit_posx
 		$player.position.y = global.player_exit_posy
@@ -26,7 +26,7 @@ func _on_cavedoor_body_exited(body):
 func change_scene():
 	if global.transition_scene == true:
 		if global.current_scene == "world":
-			if Input.is_action_just_pressed("ui_accept"):
+			if Input.is_action_just_pressed("interaction"):
 				get_tree().change_scene_to_file("res://scenes/cave.tscn")
 				global.game_first_loadin = false
 				global.finish_changescenes()

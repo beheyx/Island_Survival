@@ -17,7 +17,7 @@ func _on_cavedoor_body_exited(body):
 func change_scenes():
 	if global.transition_scene == true:
 		if global.current_scene == "cave":
-			if Input.is_action_just_pressed("ui_accept"):
+			if Input.is_action_just_pressed("interaction"):
 				get_tree().change_scene_to_file("res://scenes/world.tscn")
 				global.finish_changescenes()
 			

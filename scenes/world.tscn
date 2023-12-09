@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dsx1jofy3hv82" path="res://assets/dragon-ancient/PNG/Objects_separately/Fern_tree2.png" id="25_8s3cq"]
 [ext_resource type="Texture2D" uid="uid://bocuir3x0gcwt" path="res://assets/dragon-ancient/PNG/Objects_separately/Oval_rock1_grass_shadow.png" id="26_wodkf"]
 [ext_resource type="Texture2D" uid="uid://y6wfmrlhiipv" path="res://assets/dragon-ancient/PNG/Objects_separately/Oval_leaf_tree2.png" id="27_xo7qs"]
-[ext_resource type="Script" path="res://scenes/npc2.gd" id="39_rpbpu"]
+[ext_resource type="Script" path="res://scripts/npc2.gd" id="39_hioe6"]
 [ext_resource type="Texture2D" uid="uid://b4q76pt28f1ae" path="res://assets/characters/playersSkins16.png" id="40_jayq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uv5g"]
@@ -29268,7 +29268,7 @@ texture = ExtResource("4_plx1f")
 0:5/0/y_sort_origin = 18
 0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:5/0/physics_layer_0/angular_velocity = 0.0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.625, 14.25, 7.625, 12.75, 8.875, 26, -4.875, 26.25, -10.125, 20.5)
 6:7/size_in_atlas = Vector2i(2, 2)
 6:7/0 = 0
 6:7/0/y_sort_origin = 9
@@ -30469,7 +30469,7 @@ position = Vector2(831, 1115)
 shape = SubResource("RectangleShape2D_pnrl6")
 
 [node name="npc2" type="CharacterBody2D" parent="."]
-script = ExtResource("39_rpbpu")
+script = ExtResource("39_hioe6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc2"]
 position = Vector2(1335, 292)
