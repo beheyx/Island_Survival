@@ -68,7 +68,7 @@ interaction={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://main.dialogue", "res://npc.dialogue", "res://endgame.dialogue", "res://cave.dialogue", "res://npcCave.dialogue", "res://goatMan.dialogue", "res://npc2.dialogue", "res://dialogue/cave.dialogue", "res://dialogue/endgame.dialogue", "res://dialogue/goatMan.dialogue", "res://dialogue/npc.dialogue", "res://dialogue/main.dialogue", "res://dialogue/npc2.dialogue", "res://dialogue/npcCave.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/cave.dialogue", "res://dialogue/endgame.dialogue", "res://dialogue/goatMan.dialogue", "res://dialogue/npc.dialogue", "res://dialogue/main.dialogue", "res://dialogue/npc2.dialogue", "res://dialogue/npcCave.dialogue")
 
 [rendering]
 
