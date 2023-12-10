@@ -1,4 +1,8 @@
 ﻿# final-project-wumpus-game-team
+Dec 10 updates:
+- finished map
+- adjusted ysort (kinda fixed it)
+
 Dec 8 updates:
 - add 2nd npc in world
 - fixed endgame bug
