@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: 100vh;
 }
 
 header {
@@ -36,9 +37,7 @@ section p{
     border-radius: 10px;
 }
 a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
+    display: inline-block; 
     text-decoration: none;
     background-color: #8a680cfd;
     color: #ffffff;
