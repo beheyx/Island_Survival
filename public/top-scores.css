@@ -11,10 +11,11 @@ body {
 
 header {
     background-image: url('web/sky.jpg');
-    
     color: #ffffff;
     text-align: center;
     padding: 1em 0;
+    font-weight: bold;
+
 }
 
 section {
@@ -22,12 +23,13 @@ section {
     margin: 20px auto;
     padding: 20px;
     border: 1px solid none;
-    
+    font-size: 20px;
+    text-align: center;
 }
 
 section p{
     color: #ffffff;
-    text-align: center;
+    
     padding: 1em 0;
     font-size: large;
     box-shadow: #2afc00;
@@ -35,9 +37,9 @@ section p{
     background-color: #6b4f00fd;
     border: 2px solid #503b00fd;
     border-radius: 10px;
+   
 }
 a {
-    display: inline-block; 
     text-decoration: none;
     background-color: #8a680cfd;
     color: #ffffff;
@@ -45,4 +47,9 @@ a {
     font-weight: bold;
     border: 2px solid #503b00fd;
     border-radius: 10px;
+    
+}
+
+h1 {
+    
 }
