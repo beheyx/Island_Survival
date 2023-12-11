@@ -1,4 +1,7 @@
 body {
+    background-image: url('web/background.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -6,8 +9,9 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-image: url('web/sky.jpg');
+    
+    color: #ffffff;
     text-align: center;
     padding: 1em 0;
 }
@@ -16,15 +20,25 @@ section {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid none;
+    
 }
 
+section p{
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+    font-size: large;
+    box-shadow: #2afc00;
+    font-weight: bold;
+    background-color: #2afc00;
+}
 a {
     display: block;
     text-align: center;
     margin-top: 10px;
     text-decoration: none;
-    background-color: #333;
+    background-color: #2afc00;
     color: #fff;
     padding: 10px;
 }
