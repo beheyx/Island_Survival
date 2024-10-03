@@ -1,4 +1,9 @@
-﻿# final-project-wumpus-game-team
+﻿# How to run the game
+- node server
+- http://localhost:3000 in your browser
+
+
+# final-project-wumpus-game-team
 Dec 10 updates:
 - finished map
 - adjusted ysort (kinda fixed it)
