@@ -1,4 +1,7 @@
-﻿# How to run the game
+# Video Demo
+https://www.youtube.com/watch?v=XbADyJNRrGc
+
+# How to run the game
 - node server
 - http://localhost:3000 in your browser
 
